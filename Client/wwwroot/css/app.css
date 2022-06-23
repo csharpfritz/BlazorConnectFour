@@ -1,9 +1,9 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 :root {
-	--board-bg: yellow;
-  --player1: red;
-  --player2: blue;
+    --board-bg: #EDD01C;
+    --player1: red;
+    --player2: blue;
 }
 
 html, body {
