@@ -153,7 +153,7 @@ public class GameState
 	/// </summary>
 	/// <param name="column">0-indexed column to place the piece into</param>
 	/// <returns>The final array index where the piece resides</returns>
-	public int PlayPiece(int column)
+	public byte PlayPiece(int column)
 	{
 
 		// Check for a current win
@@ -172,7 +172,7 @@ public class GameState
 
 		TheBoard[landingSpot] = PlayerTurn;
 
-		return landingSpot;
+		return ConvertLandingSpotToRow(landingSpot);
 
 	}
 
@@ -182,10 +182,10 @@ public class GameState
 		TheBoard = new List<int>(new int[42]);
 	}
 
-	public byte ConvertLandingSpotToRow(int landingSpot)
+	private byte ConvertLandingSpotToRow(int landingSpot)
 	{
 
-		return (byte)Math.Floor(landingSpot / (decimal)7);
+		return (byte)(Math.Floor(landingSpot / (decimal)7) + 1);
 
 	}
 
